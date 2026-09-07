@@ -234,6 +234,18 @@ h1 {
     object-fit: contain;
     border-radius: 5px;
 }
+
+/* Real hand cutouts are tall: reserve a consistent inset so fingers and wrist
+   stay fully inside every square card without being stretched. */
+.card .front-face img[src*="fingers-"] {
+    width: 82%;
+    height: 84%;
+    max-width: none;
+    max-height: none;
+    object-fit: contain;
+    object-position: center;
+    transform: translateY(2%);
+}
 .card .back-face { 
     background-image: url('card4.png'); 
 }
