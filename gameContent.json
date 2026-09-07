@@ -19,6 +19,42 @@
         { "firstImage": "images/grade1-number-friends/fingers-2-card.png", "firstImageAlt": "Two fingers", "secondImage": "images/grade1-number-friends/dots-2.svg", "secondImageAlt": "Two dots" },
         { "firstImage": "images/grade1-number-friends/fingers-3-card.png", "firstImageAlt": "Three fingers", "secondImage": "images/grade1-number-friends/dots-3.svg", "secondImageAlt": "Three dots" },
         { "firstImage": "images/grade1-number-friends/fingers-4-card.png", "firstImageAlt": "Four fingers", "secondImageAlt": "Four dots", "secondImage": "images/grade1-number-friends/dots-4.svg" }
+      ] },
+      "level4": { "pairs": [
+        { "a": "3", "image": "images/grade1-number-friends/groups-3.svg", "imageAlt": "Three stars" },
+        { "a": "4", "image": "images/grade1-number-friends/groups-4.svg", "imageAlt": "Four stars" },
+        { "a": "5", "image": "images/grade1-number-friends/groups-5.svg", "imageAlt": "Five stars" },
+        { "a": "6", "image": "images/grade1-number-friends/groups-6.svg", "imageAlt": "Six stars" }
+      ] },
+      "level5": { "pairs": [
+        { "a": "1", "image": "images/grade1-number-friends/dots-1.svg", "imageAlt": "One dot" },
+        { "a": "2", "image": "images/grade1-number-friends/fingers-2-card.png", "imageAlt": "Two fingers" },
+        { "a": "3", "image": "images/grade1-number-friends/groups-3.svg", "imageAlt": "Three stars" },
+        { "a": "4", "image": "images/grade1-number-friends/dots-4.svg", "imageAlt": "Four dots" },
+        { "a": "5", "image": "images/grade1-number-friends/fingers-5-card.png", "imageAlt": "Five fingers" },
+        { "a": "6", "image": "images/grade1-number-friends/groups-6.svg", "imageAlt": "Six stars" },
+        { "a": "7", "image": "images/grade1-number-friends/dots-7.svg", "imageAlt": "Seven dots" },
+        { "a": "8", "image": "images/grade1-number-friends/groups-8.svg", "imageAlt": "Eight stars" }
+      ] },
+      "level6": { "pairs": [
+        { "a": "2", "image": "images/grade1-number-friends/groups-2.svg", "imageAlt": "Two stars" },
+        { "a": "3", "image": "images/grade1-number-friends/dots-3.svg", "imageAlt": "Three dots" },
+        { "a": "4", "image": "images/grade1-number-friends/fingers-4-card.png", "imageAlt": "Four fingers" },
+        { "a": "5", "image": "images/grade1-number-friends/groups-5.svg", "imageAlt": "Five stars" },
+        { "a": "6", "image": "images/grade1-number-friends/dots-6.svg", "imageAlt": "Six dots" },
+        { "a": "7", "image": "images/grade1-number-friends/groups-7.svg", "imageAlt": "Seven stars" },
+        { "a": "8", "image": "images/grade1-number-friends/dots-8.svg", "imageAlt": "Eight dots" },
+        { "a": "9", "image": "images/grade1-number-friends/groups-9.svg", "imageAlt": "Nine stars" }
+      ] },
+      "level7": { "pairs": [
+        { "firstImage": "images/grade1-number-friends/dots-2.svg", "firstImageAlt": "Two dots", "secondImage": "images/grade1-number-friends/groups-2.svg", "secondImageAlt": "Two stars" },
+        { "firstImage": "images/grade1-number-friends/dots-3.svg", "firstImageAlt": "Three dots", "secondImage": "images/grade1-number-friends/groups-3.svg", "secondImageAlt": "Three stars" },
+        { "firstImage": "images/grade1-number-friends/dots-4.svg", "firstImageAlt": "Four dots", "secondImage": "images/grade1-number-friends/groups-4.svg", "secondImageAlt": "Four stars" },
+        { "firstImage": "images/grade1-number-friends/dots-5.svg", "firstImageAlt": "Five dots", "secondImage": "images/grade1-number-friends/groups-5.svg", "secondImageAlt": "Five stars" },
+        { "firstImage": "images/grade1-number-friends/dots-6.svg", "firstImageAlt": "Six dots", "secondImage": "images/grade1-number-friends/groups-6.svg", "secondImageAlt": "Six stars" },
+        { "firstImage": "images/grade1-number-friends/dots-7.svg", "firstImageAlt": "Seven dots", "secondImage": "images/grade1-number-friends/groups-7.svg", "secondImageAlt": "Seven stars" },
+        { "firstImage": "images/grade1-number-friends/dots-8.svg", "firstImageAlt": "Eight dots", "secondImage": "images/grade1-number-friends/groups-8.svg", "secondImageAlt": "Eight stars" },
+        { "firstImage": "images/grade1-number-friends/dots-9.svg", "firstImageAlt": "Nine dots", "secondImage": "images/grade1-number-friends/groups-9.svg", "secondImageAlt": "Nine stars" }
       ] }
     }
   }
