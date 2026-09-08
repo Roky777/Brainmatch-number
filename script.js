@@ -188,66 +188,43 @@ function resetGameState() {
 }
 
 // --- Scoring and Feedback ---
-function calculateXP(level, turns) {
-  switch (level) {
-    case 1:
-    //   if (turns === 8) return 40;
-      if (turns <= 12) return 40;
-      if (turns <= 16) return 35;
-      return 30;
-    case 2:
-      if (turns <= 14) return 60;
-      if (turns <= 18) return 50;
-      return 40;
-    case 3:
-      if (turns <= 16) return 100;
-      if (turns <= 20) return 80;
-      return 60;
-    case 4:
-      if (turns <= 16) return 120;
-      if (turns <= 20) return 100;
-      return 80;
-    case 5:
-      if (turns <= 24) return 140;
-      if (turns <= 30) return 120;
-      return 100;
-    case 6:
-      if (turns <= 24) return 160;
-      if (turns <= 30) return 140;
-      return 120;
-    case 7:
-      if (turns <= 24) return 180;
-      if (turns <= 32) return 160;
-      return 140;
-    default:
-      return 0;
-  }
+// Every campaign has a 200-XP perfect-play cap, regardless of its level count.
+const XP_SCHEDULES = {
+  1: [200],
+  2: [80, 120],
+  3: [40, 60, 100],
+  4: [30, 40, 50, 80],
+  5: [20, 30, 40, 50, 60],
+  6: [15, 20, 30, 35, 45, 55],
+  7: [10, 15, 20, 30, 35, 40, 50],
+  8: [10, 15, 20, 20, 25, 30, 35, 45],
+  9: [8, 12, 16, 18, 20, 22, 25, 34, 45],
+};
+
+function getLevelXPRewards(level) {
+  const rewards = XP_SCHEDULES[MAX_GAME_LEVEL] || [];
+  const maxXP = rewards[level - 1] || 0;
+  return {
+    maxXP,
+    mediumXP: Math.round(maxXP * 0.8),
+    lowXP: Math.round(maxXP * 0.6),
+    perfectTurns: 12 + (level - 1) * 2,
+  };
 }
+
+function calculateXP(level, turns) {
+  const rewards = getLevelXPRewards(level);
+  if (turns <= rewards.perfectTurns) return rewards.maxXP;
+  if (turns <= rewards.perfectTurns + 4) return rewards.mediumXP;
+  return rewards.lowXP;
+}
+
 function calculateCampaignStars(level, turns) {
   const xp = calculateXP(level, turns);
-  if (level === 1) {
-    if (xp === 40) return 3;
-    if (xp === 35) return 2;
-    return 1;
-  }
-  if (level === 2) {
-    if (xp === 60) return 3;
-    if (xp === 50) return 2;
-    return 1;
-  }
-  if (level === 3) {
-    if (xp === 100) return 3;
-    if (xp === 80) return 2;
-    return 1;
-  }
-  if (level >= 4 && level <= 7) {
-    const topXP = [0, 0, 0, 0, 120, 140, 160, 180][level];
-    const middleXP = topXP - 20;
-    if (xp === topXP) return 3;
-    if (xp === middleXP) return 2;
-    return 1;
-  }
-  return 0;
+  const rewards = getLevelXPRewards(level);
+  if (xp >= rewards.maxXP) return 3;
+  if (xp >= rewards.mediumXP) return 2;
+  return 1;
 }
 function calculateReflexStars(moves) {
   if (moves === 8) return 3;
@@ -669,13 +646,12 @@ function handleCampaignWin() {
 }
 
 function calculateFinalStars(totalXP) {
-  if (totalXP >= 620) {
-    return 3; // 3 stars for scores 150 and above
-  } else if (totalXP >= 350) {
-    return 2; // 2 stars for scores between 70 and 149
-  } else {
-    return 1; // 1 star for scores below 70
+  if (totalXP >= 200) {
+    return 3;
+  } else if (totalXP >= 160) {
+    return 2;
   }
+  return 1;
 }
 
 function showFinalScoreScreen() {
